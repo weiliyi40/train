@@ -1,4 +1,9 @@
-
+import "@babel/polyfill"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import axios from 'axios'
+import * as ReactBootstrap from 'react-bootstrap'
+import lazyload from 'lazysizes'
 var ListGroup = ReactBootstrap.ListGroup
 var Spinner = ReactBootstrap.Spinner
 var Alert = ReactBootstrap.Alert
@@ -8,7 +13,7 @@ var Card = ReactBootstrap.Card
 var Row = ReactBootstrap.Row
 var Col = ReactBootstrap.Col
 var Button = ReactBootstrap.Button
-
+var ListGroupItem = ReactBootstrap.ListGroupItem
 const Header = (props) => {
     const menuItems = [
         'All',
@@ -21,7 +26,7 @@ const Header = (props) => {
 
     return (<div>
         <Container>
-            <Nav className="justify-content-center" variant="pills" defaultActiveKey="All" onSelect={(selectedKey) => props.onClick(selectedKey)} >
+            <Nav className="justify-content-center" style={{border:'soild black'}} variant="tabs" defaultActiveKey="All" onSelect={(selectedKey) => props.onClick(selectedKey)} >
                 {menuItems.map((item, key) => <Nav.Item key={key}><Nav.Link eventKey={item} >{item}</Nav.Link></Nav.Item>)}
             </Nav>
         </Container>
@@ -40,15 +45,25 @@ const Footer = (props) => (<div>
     </Container>
 </div>)
 
-const RepoCard = (props) => (<Card border="success" style={{ marginTop: '8px', marginBottom: '8px' }}>
-    <Card.Header className="text-center">{props.no}</Card.Header>
+const RepoCard = (props) => (<Card border="primary" style={{ marginTop: '8px', marginBottom: '8px' }}>
+    <Card.Header className="text-center bg-white font-weight-bold">{props.no}</Card.Header>
     <Card.Body>
-        <Card.Img src="images/image.png" data-src={props.img} className="lazyload" />
-        <Card.Title className="text-center"><Card.Link href={props.url} target="_blank">{props.title}</Card.Link></Card.Title>
-        <Card.Text><i className="fa fa-user fa-lg fa-fw" style={{ color: 'orange' }}></i>{props.author}</Card.Text>
-        <Card.Text><i className="fa fa-star fa-lg fa-fw" style={{ color: 'yellow' }}></i>{props.stars}</Card.Text>
-        <Card.Text><i className="fa fa-code-fork fa-lg fa-fw" style={{ color: 'lightblue' }}></i>{props.forks}</Card.Text>
-        <Card.Text><i className="fa fa-warning fa-lg fa-fw" style={{ color: 'purple' }}></i>{props.issues}</Card.Text>
+    <Card.Img src="./images/image.png" data-src={props.img} className="lazyload" />
+        <Card.Title className="text-center"><Card.Link href={props.url} className="text-danger" target="_blank">{props.title}</Card.Link></Card.Title>
+        <ListGroup className="list-group-flush">
+            <ListGroupItem className="bg-light">
+                <Card.Text><i className="fa fa-user fa-lg fa-fw" style={{ color: 'orange' }}></i>{props.author}</Card.Text>
+            </ListGroupItem>
+            <ListGroupItem className="bg-light">
+                <Card.Text><i className="fa fa-star fa-lg fa-fw" style={{ color: 'yellow' }}></i>{props.stars}</Card.Text>
+            </ListGroupItem>
+            <ListGroupItem className="bg-light">
+                <Card.Text><i className="fa fa-code-fork fa-lg fa-fw" style={{ color: 'lightblue' }}></i>{props.forks}</Card.Text>
+            </ListGroupItem>
+            <ListGroupItem className="bg-light">
+                <Card.Text><i className="fa fa-warning fa-lg fa-fw" style={{ color: 'purple' }}></i>{props.issues}</Card.Text>
+            </ListGroupItem>
+        </ListGroup>
 
     </Card.Body>
 </Card>)
@@ -154,7 +169,7 @@ class App extends React.Component {
                     </div>
                 </Content>
                 <Footer>
-                    <div className="text-center">
+                    <div className="text-center text-black jumbotron bg-light">
                         版权所有 &copy; 魏黎怡
             </div>
                 </Footer>
