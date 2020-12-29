@@ -1,0 +1,145 @@
+@import '~antd/dist/antd.css';
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.drawer{
+  width: 55px;
+  height: 60px;
+  background-color: black;
+  color: yellow;
+  position: fixed;
+  right: 0px; 
+   top: '0px';
+   padding-top:10px ;
+}
+
+
+.ant-btn-primary{
+  background-color:#ececec;
+  color: black;
+  font-size: small;
+  border:none;
+  margin: 5px;
+}
+
+.ant-btn-primary:hover{
+    color: black;
+    background: #ececec;
+    border-color:1px soild #111111;
+}
+
+.add{
+  background-color: rgb(10, 10, 10);
+  color: white;
+  width: 90%;
+  height: 50px;
+  font-size: 18px;
+}
+.ant-card-body {
+  text-align: center;
+  padding: 5px;
+}
+.ant-card-body button:hover{
+  background-color: rgb(230, 166, 49);
+  color: white;
+}
+.info{
+  padding: 20px;
+}
+.info h6{
+  position: relative;
+  margin: 10px;
+  font-size: 17px;
+  font-weight: 400;
+}
+.info h6::before{
+  content: '';
+  width: 20px;
+  height: 3px;
+  background-color: #eabf00;
+  position: absolute;
+  bottom: 0;
+  top: 40px;
+  left: 50%;
+  margin-left: -10px;
+  
+}
+.info h5{
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+.info p{
+  color: rgb(148, 146, 146);
+  font-weight: 700;
+  font-size: 16px;
+}
+.free{
+  width: 80px;
+  height: 19px;
+  font-size: 10px;
+  color: white;
+  background-color: #000000;
+  position: absolute;
+  top:5px;
+  right: 5px;
+  z-index:999;
+}
+
+
+.ant-col{
+padding-right:5px ;
+}
+
+.size{
+  display: none;
+}
+.cart:hover .size{
+display: block;
+}
+.cart:hover button{
+display: none;
+}
+
+  .cart{
+    width: 220px;
+    height: 80px;
+  }
