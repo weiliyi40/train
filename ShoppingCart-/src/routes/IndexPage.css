@@ -1,0 +1,87 @@
+.box {
+  width: 1200px;
+  background-color: #fff;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.site-layout {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #fff;
+}
+
+.productlist {
+  width: 1200px;
+  /* height: 1200px; */
+  margin: 0 auto;
+}
+
+.box :global(.ant-menu) {
+  margin-left: 100px;
+}
+
+
+.button {
+  background-color: #f0f0f0;
+  border: none;
+}
+
+.button:hover,
+.button:active,
+.button:focus,
+.button:visited {
+  background-color: rgb(248, 184, 8);
+  border: none;
+  color: #fff;
+}
+
+.sider{
+  z-index: 1;
+  width: 100%;
+  margin-left: 45px;
+  margin-top: 84px;
+  position: fixed;
+}
+
+.content{
+  padding: '0 50px';
+  margin-top: 64px;
+  background: "white";
+}
+
+
+
+@media (max-width: 1200px) {
+  :global(.ant-layout.ant-layout-has-sider) {
+    flex-direction: column !important;
+  }
+
+  .sider{
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .screen {
+    position: initial;
+    margin: 20px 56px;
+  }
+
+  :global(.ant-drawer-content-wrapper) {
+    width: 100% !important;
+  }
+
+  .drawer {
+    width: 100%;
+  }
+
+  .content {
+    margin-top: initial;
+  }
+
+  .menu{
+    margin-left: 50px;
+  }
+}
