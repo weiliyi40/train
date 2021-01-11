@@ -106,7 +106,7 @@ class Goods extends React.Component {
                         <span style={{ fontSize: '20px' }}>{item.currencyFormat}</span>
                         <span style={{ fontSize: '30px' }}>{num1}</span>
                         <span>.</span>
-                        <span style={{ fontSize: '20px' }}>{num2 ? num2 : 0}</span>
+                        <span style={{ fontSize: '20px' }}>{num2}</span>
                     </div>
 
                     <Popover
